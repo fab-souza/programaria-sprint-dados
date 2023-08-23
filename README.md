@@ -12,3 +12,13 @@
 | :fire: Desafio     |
 
 ![capa](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/7ac8de8b-4d68-4966-ad83-96df8d9dc72c)
+
+# Sobre o workshop 📚
+
+
+
+# Conclusão 🏁
+
+
+
+## Ferramentas utilizadas 🧰
