@@ -15,7 +15,7 @@
 
 # Sobre a Sprint 📚
 
-Ela foi composta por 6 dias repletos de vídeos e artigos voltados à dados, partindo de conteúdos voltados à carreira, processos seletivos e níveis de senioridade, no primeiro dia, e concluindo com uma live com 3 especialistas da área. No 3º dia, o tema central era a Inteligência Artificial e tivemos um workshop sobre Deep Learning, com a head de dados na NeuralMed, [Jéssica dos Santos de Oliveira](https://www.linkedin.com/in/jessica-santos-oliveira), onde tive contato com redes neurais e como construir uma CNN (redes neurais convolucionais).
+Ela foi composta por 6 dias repletos de vídeos e artigos voltados à dados, partindo de conteúdos voltados à carreira, processos seletivos e níveis de senioridade, no primeiro dia, e concluindo com uma live com 3 especialistas da área. No 3º dia, o tema central era a Inteligência Artificial e tivemos um workshop sobre Deep Learning, com a head de dados na NeuralMed, [Jéssica dos Santos](https://www.linkedin.com/in/jessica-santos-oliveira).
 
 # Workshop 👩🏻‍💻
 
