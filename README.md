@@ -13,13 +13,28 @@
 
 ![capa](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/7ac8de8b-4d68-4966-ad83-96df8d9dc72c)
 
+A PrograMaria é uma startup de impacto social que tem como missão empoderar mulheres e promover diversidade e inclusão no mundo da programação e da tecnologia, por meio de oficinas, eventos e cursos de formação técnica. Desde 2020, ano que comecei a pesquisar mais sobre dados, a PrograMaria foi uma das comunidades femininas que encontrei e me encantei. Tive a oportunidade de participar de alguns eventos online e foi onde encontrei uma linda rede de apoio, pois foi onde conheci muita gente maravilhosa, tanto palestrantes quanto outras participantes que estavam em uma situação parecida com a minha, que já estavam decididas a migrar de carreira ou que estavam no início da carreira em tecnologia e queriam apoiar outras mulheres a seguirem o mesmo caminho. 
+
 # Sobre a Sprint 📚
 
-Ela foi composta por 6 dias repletos de vídeos e artigos voltados à dados, partindo de conteúdos voltados à carreira, processos seletivos e níveis de senioridade, no primeiro dia, e concluindo com uma live com 3 especialistas da área. No 3º dia, o tema central era a Inteligência Artificial e tivemos um workshop sobre Deep Learning, com a head de dados na NeuralMed, [Jéssica dos Santos](https://www.linkedin.com/in/jessica-santos-oliveira).
+A Sprint foi composta por 6 dias repletos de vídeos e artigos voltados à dados, em que cada dia era abordado um tópico diferente. Partindo de conteúdos sobre carreira e processos seletivos, no primeiro dia, e concluindo com uma live, com 3 especialistas da área. No 3º dia, o tema era Inteligência Artificial e, além dos artigos e palestras, tivemos um workshop sobre Deep Learning, com a head de dados na NeuralMed, [Jéssica dos Santos](https://www.linkedin.com/in/jessica-santos-oliveira).
 
 # Workshop 👩🏻‍💻
 
-Na primeira parte, utilizamos uma base de dados, disponibilizada no [Kaggle](https://www.kaggle.com), sobre [exames de câncer de mama](https://www.kaggle.com/datasets/yasserh/breast-cancer-dataset) com a finalidade de  classificar os tumores em: malignos (cancerígenos) ou benignos (não cancerosos).
+Começamos o workshop com uma base de dados, disponibilizada no [Kaggle](https://www.kaggle.com), sobre [exames de câncer de mama](https://www.kaggle.com/datasets/yasserh/breast-cancer-dataset) com a finalidade de  classificar os tumores em malignos (cancerígenos) ou benignos (não cancerosos), utilizando Redes Neurais.
+
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/e11b63cf-2c7d-4d02-8fdf-bb5774575297)
+
+Não foi preciso fazer nenhum tratamento nos dados, pois a maioria deles já estava no formato numérico e não havia registros nulos ou equivocados. A única alteração que fizemos foi criar uma nova coluna para receber o diagnóstico dos exames na forma de números, já que eles estavam classificados, na coluna “**diagnosis**”,  como “M”, para tumores malignos, e “B”, para benignos. 
+
+A nova coluna foi denominada como “**diagnosis_maligno**”, em que todos os registros que estavam classificados como “B”, na coluna “**diagnosis**”, foram preenchidos com “0”, enquanto os exames que resultaram em tumores malignos, foram preenchidos com “1”.
+
+
+
+
+
+
+
 
 # Conclusão 🏁
 
