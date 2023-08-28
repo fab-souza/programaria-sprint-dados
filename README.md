@@ -8,7 +8,7 @@
 | -------------  | --- |
 | :sparkles: Nome        | **PrograMaria Sprint Dados: Ampliando fronteiras**
 | :label: Tecnologias | python
-| :rocket: URL         | Notebook da [Parte 1](https://www.kaggle.com/fabianadesouza/programaria-sprint-dados-parte-1), Parte 2 e Parte 3
+| :rocket: URL         | Notebook da [Parte 1](https://www.kaggle.com/fabianadesouza/programaria-sprint-dados-parte-1), [Parte 2](https://www.kaggle.com/code/fabianadesouza/programaria-sprint-dados-parte-2) e Parte 3
 | :fire: Desafio     | 
 
 ![capa](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/7ac8de8b-4d68-4966-ad83-96df8d9dc72c)
