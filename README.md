@@ -40,8 +40,20 @@ O próximo passo foi separar a base de dados entre **Treino**, **Teste** e **Val
 Antes de dar início a criação do modelo, também fizemos a normalização dos dados, como uma forma de garantir que eles estejam em uma escala comum e tenham características estatísticas semelhantes, por exemplo a média e a variância. A Jéssica citou duas formas de se fazer a normalização: 
 
 - min-max, em que todos os registros passam a ter um intervalo de 0 à 1;
-
 - e padronização, que dimensiona os dados para ter uma média igual a 0.
+
+Usando a segunda opção, fizemos:
+
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/93efcbf9-0db4-444e-a45c-46d87b3fe259)
+
+
+
+
+
+
+
+
+
 
 
 
