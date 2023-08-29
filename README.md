@@ -46,11 +46,27 @@ Usando a segunda opção, fizemos:
 
 ![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/93efcbf9-0db4-444e-a45c-46d87b3fe259)
 
+Para criar o modelo, primeiro, tivemos que importar o **Tensorflow** e **Keras**, que são bibliotecas usadas na criação de Machine Learning e Redes Neurais, respectivamente, e que eu nunca trabalhei anteriormente.
 
+Em seguida, fizemos a função para criar o modelo.
 
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/7e143df5-fcb0-4ab3-9063-76039ce4c01f)
 
+Na primeira linha, definimos que as camadas serão criadas em sequência de forma manual.
 
+Na linha seguinte, definimos a primeira camada da Rede Neural, estabelecendo parâmetros para os dados de entrada:
 
+‘*Dense*’ significa que os neurônios da Rede estarão interligados, ‘*input_dim*’ diz quantas variáveis de entrada a Rede vai receber, ‘*units*’ refere-se a quantidade de neurônios que estarão conectados aos dados de entrada e no ‘*activation*’ informamos a função de ativação dos neurônios. No caso, ‘*relu*’ significa que os neurônios só serão ativados se os valores forem positivos, caso contrário, a informação não será passada adiante.
+
+Depois criamos uma camada oculta, no primeiro parâmetro de ‘*Dense*’, estamos definindo o número de neurônios desta camada, seguida por sua ativação.
+
+Finalizamos com o “1” que significa a quantidade de neurônios na saída, que neste caso é só para dizer se o tumor é maligno ou benigno. Sua ativação será diferente, “*sigmoid*”, e irá retornar a probabilidade do resultado ser do tipo maligno.
+
+Com o modelo criado, fizemos um *summary* para visualizar sua arquitetura. Ele tem 431 parâmetros no total, mas de onde saiu este valor?
+
+Na primeira linha, temos 310 parâmetros que referem-se às variáveis de entrada, a quantidade de neurônios e mais 1 viés (bias) para cada um. Em seguida, temos 110 parâmetros das camadas ocultas e seus vieses. Finalizando com 11 parâmetros, na camada ‘dense_2’, que são os neurônios da camada anterior com a variável de saída.
+
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/fc8a12db-a3ac-4119-bbde-e6d86769303a)
 
 
 
