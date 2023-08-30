@@ -68,6 +68,10 @@ Na primeira linha, temos 310 parâmetros que referem-se às variáveis de entrad
 
 ![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/fc8a12db-a3ac-4119-bbde-e6d86769303a)
 
+Para fazer a compilação, referente a forma que a rede aprende, definimos três parâmetros:
+- *optimizer* = responsável por ajustar os atributos da rede neural, como os pesos e taxas de aprendizado. Neste caso, a Jéssica escolheu o ‘Adam’, pois ele adapta a taxa de aprendizado de cada parâmetro com base em seus gradientes históricos e momento, acelerando o treinamento e melhorando o desempenho da rede.
+- *loss* = determina o quão errado estão as previsões do modelo e podemos derivar os gradientes que são usados para atualizar os pesos.
+- *learning rate* = é um hiperparâmetro que controla o quanto o modelo deve mudar em resposta ao erro estimado cada vez que os pesos do modelo são atualizados.
 
 
 
