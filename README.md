@@ -21,6 +21,8 @@ A Sprint foi composta por 6 dias repletos de vídeos e artigos voltados à dados
 
 # Workshop 👩🏻‍💻
 
+## Parte 1
+
 Começamos o workshop com uma base de dados, disponibilizada no [Kaggle](https://www.kaggle.com), sobre [exames de câncer de mama](https://www.kaggle.com/datasets/yasserh/breast-cancer-dataset) com a finalidade de  classificar os tumores em malignos (cancerígenos) ou benignos (não cancerosos), utilizando Redes Neurais.
 
 ![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/e11b63cf-2c7d-4d02-8fdf-bb5774575297)
@@ -72,6 +74,175 @@ Para fazer a compilação, referente a forma que a rede aprende, definimos três
 - *optimizer* = responsável por ajustar os atributos da rede neural, como os pesos e taxas de aprendizado. Neste caso, a Jéssica escolheu o ‘Adam’, pois ele adapta a taxa de aprendizado de cada parâmetro com base em seus gradientes históricos e momento, acelerando o treinamento e melhorando o desempenho da rede.
 - *loss* = determina o quão errado estão as previsões do modelo e podemos derivar os gradientes que são usados para atualizar os pesos.
 - *learning rate* = é um hiperparâmetro que controla o quanto o modelo deve mudar em resposta ao erro estimado cada vez que os pesos do modelo são atualizados.
+
+```
+adam = Adam(lr = 0.01)                      
+model.compile(loss = 'binary_crossentropy', optimizer = adam, metrics = ['accuracy'])
+```
+
+Seguindo para o treinamento, fizemos:
+
+```
+model.fit(x = X_train, y = y_train, validation_data = (X_val, y_val), batch_size = 16, epochs = 10)
+```
+
+Definimos no ‘*fit*’: o conjunto de treino, tanto X quanto y, os conjuntos de validação, o ‘*batch_size*’, que é o parâmetro que determina o número de exemplos de treinamento que serão propagados pela rede de cada vez. Neste caso, o ‘*fit*’ pega os 16 primeiros registros, faz o treinamento deles e treina a rede. Depois ele pega os próximos 16 registros, faz o treinamento, treina a rede e continua até passar por todos os registros. Finalizando com o ‘*epoch*’ (número de épocas), que é a quantidade de vezes que a rede vai percorrer os dados e aprender. 
+No workshop, a Jéssica fez o ‘*fit*’ com 10 épocas. Os resultados obtidos pelo modelo da Jéssica foram:
+- acurácia = 0.9808
+- loss = 0.0971
+Excelente.
+
+O meu modelo ficou com:
+- acurácia = 0.9783
+- loss = 0.0981
+Valores próximos. 😀 👍
+
+Finalizando com a avaliação do modelo, usamos o ‘*.predict()*’ para fazer previsões com os dados do conjunto ‘X_test’ e a forma escolhida para verificar os resultados foi a matriz de confusão. E como ela funciona?
+
+Ela mostra o número de previsões corretas e incorretas feitas pelo modelo, divididas por classe. Isso permite identificar quantas previsões o modelo acertou e quantas errou. Neste caso, estamos fazendo uma classificação binária (com duas classes), a matriz de confusão terá duas linhas e duas colunas. Cada célula da matriz representa uma combinação de classe verdadeira (real) e classe prevista (prevista pelo modelo). 
+
+Mas antes de fazer a matriz, é preciso lembrar que o conjunto ‘*y_pred*’ está na forma de probabilidade, ou seja, ao invés de termos resultados entre 0 e 1, na verdade, temos valores de probabilidade do exame resultar em um tumor maligno ou não.
+
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/cbe04e46-79ea-474c-a5c3-fbe73c0ddc2f)
+
+Para apresentar a matriz, foi determinado que as probabilidades maiores do que 0,5 fossem consideradas como 1:
+
+```
+cm = confusion_matrix(y_test, y_pred > 0.5)
+```
+
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/f1f62b3c-6400-4208-858b-5001b42b95d3)
+
+Mas, o que os valores significam?
+A célula na primeira linha e primeira coluna representa verdadeiros positivos (VP), ou seja, exemplos da primeira classe que foram corretamente classificados como pertencentes à ela. 
+
+A célula na primeira linha e segunda coluna representa falsos negativos (FN), ou seja, exemplos da segunda classe que foram incorretamente classificados como pertencentes à primeira. 
+
+A célula na segunda linha e primeira coluna representa falsos positivos (FP), os exemplos da primeira classe que foram incorretamente classificados como pertencentes à segunda. 
+
+E por fim, a célula na segunda linha e segunda coluna representa verdadeiros negativos (VN), exemplos da segunda classe que foram corretamente classificados como pertencentes à ela.
+
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/83e188e0-d92c-4dec-bf71-a67e584a770c)
+
+O modelo do workshop resultou em:
+- 37 resultados no Verdadeiro Positivo (tumores benignos que foram classificados corretamente)
+- 1 resultado no Falso Negativo (tumor benigno classificado como maligno)
+- 1 resultado no Falso Positivo (tumor maligno classificado como benigno)
+- 18 resultados no Verdadeiro Negativo (tumores malignos classificados corretamente)
+
+![parte1](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/8b58400b-7c5f-4c6a-9499-2f95b40448a2)
+
+Enquanto no meu modelo, tive:
+
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/a1f26952-32c5-4f3b-8bf2-3b72d52fad89)
+
+- 34 resultados no Verdadeiro Positivo
+- nenhum no Falso Negativo
+- 2 resultados no Falso Positivo
+- e 21 resultados no Verdadeiro Negativo
+
+Acredito que não cheguei ao mesmo resultado, (1º) porque não trabalhamos com os mesmos registros, ou seja, não utilizamos um ‘seed’ na hora de fazer a divisão entre *Treino*, *Teste* e *Validação*, que fez com que tivéssemos exames diferentes nos conjuntos. (2º) porque o modelo do workshop teve um desempenho melhor do que o meu, tanto na acurácia quanto no ‘*loss*’. 
+
+---
+
+## Parte 2
+
+Na segunda parte do workshop, fizemos um modelo para distinguir e classificar imagens de exames médicos, desta vez utilizando Redes Convolucionais. A base de dados também é do Kaggle, o [Medical MNIST](https://www.kaggle.com/datasets/andrewmvd/medical-mnist). 
+
+Após fazer o carregamento dos arquivos, o caminho de cada imagem tornou-se uma variável e para saber seu tipo, criamos uma nova coluna para armazenar esta informação.
+
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/01774eb7-fb06-4914-be5a-2a3670807b79)
+
+A separação de **Treino** e **Teste** foi parecida com a primeira parte do workshop, ou seja, importação de biblioteca, criação de *X_train*, *X_test*, *y_train* e *y_test* e determinando o tamanho do teste. No caso da leitura de imagens, não foi preciso criar um conjunto de *Validação*, porque vamos usar uma classe que já faz isso, o **ImageDataGenerator**.
+
+Para defini-la, primeiro, criamos uma variável que recebeu alguns parâmetros de processamento de imagens: *rescale* e *validation_split*. Uma para multiplicar os dados por um valor fornecido antes de qualquer outra transformação, como uma forma de normalização, e para reservar uma fração dos dados de treinamento para validação, respectivamente.
+
+Em seguida, criamos o gerador de treino (*train_generator*) depois o gerador de validação (*valid_generator*). Definimos em ambos, o *dataframe*, a coluna ‘x’, a coluna ‘y’, o tamanho das imagens, as cores das imagens (no caso, preto e branco = escalas em cinza), a quantidade de arquivos que serão carregados ao mesmo tempo e o que aquele gerador é (treino ou validação).
+
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/69abe1a5-7f62-4b3d-99c7-76b3f42821bd)
+
+Seguimos para a criação da função que irá construir o modelo:
+
+```
+def build_model():
+
+    model = Sequential()
+
+    model.add(layers.Conv2D(filters = 32, kernel_size = 2, activation = "relu", input_shape = (64, 64, 1)))
+    model.add(layers.MaxPooling2D(pool_size = 2))
+    model.add(layers.Dropout(0.3))
+
+    model.add(layers.Flatten())
+
+    model.add(layers.Dense(28, activation = 'relu'))
+    model.add(layers.Dense(6, activation = 'softmax'))
+
+    return model
+```
+
+Na primeira linha, definimos que as camadas serão criadas em sequência, igual foi feito no primeiro modelo.
+
+Depois, criamos a primeira camada, uma camada convolucional com sua quantidade de filtros, tamanho das matrizes, tipo de ativação e o formato das imagens, em escala de cinza.
+
+Na próxima camada, *MaxPooling2D*, ela reduz a amostra de entrada ao longo de suas dimensões espaciais (altura e largura), pegando o valor máximo sobre uma janela de entrada (de tamanho definido por *pool_size*) para cada canal da entrada e calcula sua média.
+
+Na camada de *Dropout*, tentamos reduzir a ocorrência de *overfit* no modelo. Neste caso, estamos desabilitando 30% dos neurônios da rede.
+
+Com o *Flatten*, fazemos com que a matriz de entrada seja ‘achatada’, na forma de um array, antes de passá-la para a camada densa. 
+
+Depois criamos uma camada oculta densa, definindo seu número de neurônios, seguida por sua ativação (*relu*).
+
+Finalizando com a camada de saída com 6 neurônios, referentes às categorias de imagens, e sua ativação, que neste caso é “*softmax*”, que retorna a probabilidade da imagem pertencer às categorias e a soma delas resulta em 1. Por exemplo:
+- AbdomenCT = 0,2   
+- Hand = 0,1        
+- CXR = 0,25         
+- HeadCT = 0,2      
+- ChestCT = 0,25     
+- BreastMRI = 0,27
+
+Criamos o modelo, fizemos um *summary* para visualizar sua arquitetura e vemos que o modelo tem mais do que 850 mil parâmetros.
+
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/bf06d4b3-9004-45c0-96fd-8584e15f4466)
+
+Passando para a compilação do modelo, também definimos três parâmetros (*optimizer*, *loss* e *learning rate*) como foi feito no primeiro modelo. A única diferença é que no *loss*, mudamos de *binary_crossentropy* para *categorical_crossentropy*, pois as saídas são exames de diferentes tipos.
+
+Antes de iniciar o treinamento, definimos mais algumas funções de otimização, também chamados de *callbacks*: *ModelCheckpoint* e *EarlyStopping*. O primeiro, salva o melhor modelo enquanto os treinamentos ocorrem. Nele, definimos como os modelos serão chamados, a métrica usada para avaliar o desempenho do modelo (*val_loss*), o modo de avaliação (*min* = queremos obter o menor valor treinado), no *verbose* determinamos se isso será feito em todas as épocas e confirmamos o salvamento do melhor modelo.
+
+No segundo, interrompemos o treinamento mais cedo, quando a métrica monitorada para de melhorar. Definimos a métrica que deverá ser observada (*val_loss*), o treinamento será interrompido quando não houver uma melhoria absoluta maior que 0,001 (*min_delta*) por 5 épocas consecutivas (*patience*) e o modo é definido como *min*, o que significa que o treinamento será interrompido quando a quantidade monitorada parar de diminuir.
+
+```
+model.compile(loss = 'categorical_crossentropy', optimizer = 'adam', metrics = ['accuracy'])
+checkpoint = ModelCheckpoint('medical_image_model.hdf5', monitor = 'val_loss', verbose = 1, mode = 'min', save_best_only = True)
+early_stop = EarlyStopping(monitor = 'val_loss', min_delta = 0.001, patience = 5, mode = 'min', verbose = 1)
+```
+
+Para o treinamento do modelo, também usamos o *.fit()*, igual foi feito na primeira parte do workshop. Também informamos que o modelo deve usar *train_generator* como dados de treinamento, o uso dos callbacks que criamos anteriormente, o número de etapas por época (*train_generator.samples//BATCH_SIZE*), o uso de *valid_generator* como dados de validação, o número de etapas de validação (*valid_generator.samples//BATCH_SIZE*) e o modelo será treinado por, no máximo, 25 épocas.
+
+```
+model.fit(train_generator, callbacks = [checkpoint, early_stop], steps_per_epoch = train_generator.samples//BATCH_SIZE, 
+          validation_data = valid_generator, validation_steps = valid_generator.samples//BATCH_SIZE, epochs = 25)
+```
+
+No meu caso, parou de ser treinado na época 12 com uma acurácia na validação de 0,9985 e uma perda na validação de 0,0061. Ambos foram um pouco melhor do que o modelo apresentado pela Jéssica, que obteve *val_loss* = 0,0052 e *val_accuracy* = 0,9984.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
