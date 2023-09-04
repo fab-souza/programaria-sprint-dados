@@ -24,13 +24,13 @@ A Sprint foi composta por 6 dias repletos de vídeos e artigos voltados à dados
 No 3º dia, o tema era Inteligência Artificial e, além dos artigos e palestras, tivemos um workshop sobre Deep Learning, com a head de dados na NeuralMed, [Jéssica dos Santos](https://www.linkedin.com/in/jessica-santos-oliveira).
 
 ## Índice:
+<div id='indice'></div>
 - [Parte 1](https://github.com/fab-souza/programaria-sprint-dados#parte-1)
 - [Parte 2](https://github.com/fab-souza/programaria-sprint-dados#parte-2)
 - [Parte 3](https://github.com/fab-souza/programaria-sprint-dados#parte-3)
   
 # Workshop 👩🏻‍💻
 
-<a name="Parte-1"></a>
 ## Parte 1
 
 Começamos o workshop com uma base de dados, disponibilizada no [Kaggle](https://www.kaggle.com), sobre [exames de câncer de mama](https://www.kaggle.com/datasets/yasserh/breast-cancer-dataset) com a finalidade de  classificar os tumores em malignos (cancerígenos) ou benignos (não cancerosos), utilizando Redes Neurais.
@@ -156,8 +156,8 @@ Enquanto no meu modelo, tive:
 Acredito que não cheguei ao mesmo resultado, (1º) porque não trabalhamos com os mesmos registros, ou seja, não utilizamos um ‘seed’ na hora de fazer a divisão entre *Treino*, *Teste* e *Validação*, que fez com que tivéssemos exames diferentes nos conjuntos. (2º) porque o modelo do workshop teve um desempenho melhor do que o meu, tanto na acurácia quanto no ‘*loss*’. 
 
 ---
+<a href='#indice'>🔼 Voltar ao Índice</a>
 
-<a name="Parte-2"></a>
 ## Parte 2
 
 Na segunda parte do workshop, fizemos um modelo para distinguir e classificar imagens de exames médicos, desta vez utilizando Redes Convolucionais. A base de dados também é do Kaggle, o [Medical MNIST](https://www.kaggle.com/datasets/andrewmvd/medical-mnist). 
