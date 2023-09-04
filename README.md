@@ -13,7 +13,9 @@
 
 ![](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/7ac8de8b-4d68-4966-ad83-96df8d9dc72c#vitrinedev)
 
-A PrograMaria é uma startup de impacto social que tem como missão empoderar mulheres e promover diversidade e inclusão no mundo da programação e da tecnologia, por meio de oficinas, eventos e cursos de formação técnica. Desde 2020, ano que comecei a pesquisar mais sobre dados, a PrograMaria foi uma das comunidades femininas que encontrei e me encantei. Tive a oportunidade de participar de alguns eventos online e foi onde encontrei uma linda rede de apoio, pois foi onde conheci muita gente maravilhosa, tanto palestrantes quanto outras participantes que estavam em uma situação parecida com a minha, que já estavam decididas a migrar de carreira ou que estavam no início da carreira em tecnologia e queriam apoiar outras mulheres a seguirem o mesmo caminho. 
+A [PrograMaria](https://www.programaria.org/) é uma startup de impacto social que tem como missão empoderar mulheres e promover diversidade e inclusão no mundo da programação e da tecnologia, por meio de oficinas, eventos e cursos de formação técnica. 
+
+Desde 2020, ano que comecei a pesquisar mais sobre dados, a PrograMaria foi uma das comunidades femininas que encontrei e me encantei. Tive a oportunidade de participar de alguns eventos online e foi onde encontrei uma linda rede de apoio, pois foi onde conheci muita gente maravilhosa, tanto palestrantes quanto outras participantes que estavam em uma situação parecida com a minha, que já estavam decididas a migrar de carreira ou que estavam no início da carreira em tecnologia e queriam apoiar outras mulheres a seguirem o mesmo caminho. 
 
 # Sobre a Sprint 📚
 
@@ -44,7 +46,7 @@ Antes de dar início a criação do modelo, também fizemos a normalização dos
 - min-max, em que todos os registros passam a ter um intervalo de 0 à 1;
 - e padronização, que dimensiona os dados para ter uma média igual a 0.
 
-Usando a segunda opção, fizemos:
+Usando a segunda opção, obtivemos:
 
 ![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/93efcbf9-0db4-444e-a45c-46d87b3fe259)
 
