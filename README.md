@@ -24,9 +24,9 @@ A Sprint foi composta por 6 dias repletos de vídeos e artigos voltados à dados
 No 3º dia, o tema era Inteligência Artificial e, além dos artigos e palestras, tivemos um workshop sobre Deep Learning, com a head de dados na NeuralMed, [Jéssica dos Santos](https://www.linkedin.com/in/jessica-santos-oliveira).
 
 ## Índice:
-- [Parte 1](Parte-1)
-- [Parte 2](Parte-2)
-- [Parte 3](Parte-3)
+- [Parte 1](https://github.com/fab-souza/programaria-sprint-dados#parte-1)
+- [Parte 2](https://github.com/fab-souza/programaria-sprint-dados#parte-2)
+- [Parte 3](https://github.com/fab-souza/programaria-sprint-dados#parte-3)
   
 # Workshop 👩🏻‍💻
 
