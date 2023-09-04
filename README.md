@@ -1,6 +1,6 @@
 # programaria-sprint-dados
 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=GREEN&style=for-the-badge)
 
 ![Badge code size](https://img.shields.io/github/languages/code-size/fab-souza/programaria-sprint-dados)
 
@@ -11,7 +11,7 @@
 | :rocket: URL         | Notebook da [Parte 1](https://www.kaggle.com/fabianadesouza/programaria-sprint-dados-parte-1), [Parte 2](https://www.kaggle.com/code/fabianadesouza/programaria-sprint-dados-parte-2) e [Parte 3](https://www.kaggle.com/code/fabianadesouza/programaria-sprint-dados-parte-3)
 | :fire: Desafio     | 
 
-![capa](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/7ac8de8b-4d68-4966-ad83-96df8d9dc72c)
+![](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/7ac8de8b-4d68-4966-ad83-96df8d9dc72c#vitrinedev)
 
 A PrograMaria é uma startup de impacto social que tem como missão empoderar mulheres e promover diversidade e inclusão no mundo da programação e da tecnologia, por meio de oficinas, eventos e cursos de formação técnica. Desde 2020, ano que comecei a pesquisar mais sobre dados, a PrograMaria foi uma das comunidades femininas que encontrei e me encantei. Tive a oportunidade de participar de alguns eventos online e foi onde encontrei uma linda rede de apoio, pois foi onde conheci muita gente maravilhosa, tanto palestrantes quanto outras participantes que estavam em uma situação parecida com a minha, que já estavam decididas a migrar de carreira ou que estavam no início da carreira em tecnologia e queriam apoiar outras mulheres a seguirem o mesmo caminho. 
 
@@ -288,8 +288,9 @@ Antes deste workshop, eu nunca tinha trabalhado com Deep Learning, muito menos c
 
 Sei que preciso corrigir a questão do *labelEncoder*, mas adquiri um novo interesse e pretendo melhorar a forma que utilizo esta ferramenta. 
 
-Muito obrigada por chegar até aqui e até a próxima 🤗
+---
 
+Muito obrigada por chegar até aqui e até a próxima 🤗
 
 ## Ferramentas utilizadas 🧰
 <p>
