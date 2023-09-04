@@ -17,6 +17,7 @@ A [PrograMaria](https://www.programaria.org/) é uma startup de impacto social q
 
 Desde 2020, ano que comecei a pesquisar mais sobre dados, a PrograMaria foi uma das comunidades femininas que encontrei e me encantei. Tive a oportunidade de participar de alguns eventos online e foi onde encontrei uma linda rede de apoio, pois foi onde conheci muita gente maravilhosa, tanto palestrantes quanto outras participantes que estavam em uma situação parecida com a minha, que já estavam decididas a migrar de carreira ou que estavam no início da carreira em tecnologia e queriam apoiar outras mulheres a seguirem o mesmo caminho. 
 
+<div id='sobre'></div>
 # Sobre a Sprint 📚
 
 A Sprint foi composta por 6 dias repletos de vídeos e artigos voltados à dados, em que cada dia era abordado um tópico diferente. Partindo de conteúdos sobre carreira e processos seletivos, no primeiro dia, e concluindo com uma live, com 3 especialistas da área. 
@@ -24,7 +25,7 @@ A Sprint foi composta por 6 dias repletos de vídeos e artigos voltados à dados
 No 3º dia, o tema era Inteligência Artificial e, além dos artigos e palestras, tivemos um workshop sobre Deep Learning, com a head de dados na NeuralMed, [Jéssica dos Santos](https://www.linkedin.com/in/jessica-santos-oliveira).
 
 ## Índice:
-<div id='indice'></div>
+
 - [Parte 1](https://github.com/fab-souza/programaria-sprint-dados#parte-1)
 - [Parte 2](https://github.com/fab-souza/programaria-sprint-dados#parte-2)
 - [Parte 3](https://github.com/fab-souza/programaria-sprint-dados#parte-3)
@@ -155,8 +156,7 @@ Enquanto no meu modelo, tive:
 
 Acredito que não cheguei ao mesmo resultado, (1º) porque não trabalhamos com os mesmos registros, ou seja, não utilizamos um ‘seed’ na hora de fazer a divisão entre *Treino*, *Teste* e *Validação*, que fez com que tivéssemos exames diferentes nos conjuntos. (2º) porque o modelo do workshop teve um desempenho melhor do que o meu, tanto na acurácia quanto no ‘*loss*’. 
 
----
-<a href='#indice'>🔼 Voltar ao Índice</a>
+<a href='#sobre'>🔼 Voltar ao Índice</a>
 
 ## Parte 2
 
@@ -254,7 +254,8 @@ E finalizamos a avaliação com uma matriz de confusão, nela observamos que nã
 
 Durante o workshop, a Jéssica reparou que o *LabelEncoder* mudaria as classes dos exames seguindo uma ordem alfabética, enquanto o *y_pred* seguiu a ordem que as classes foram aparecendo. Eu tentei corrigir este erro ao fazer um *LabelEncoder.fit*, mas acho que não obtive sucesso. Fica de lição para o próximo projeto.
 
-<a name="Parte-3"></a>
+<a href='#sobre'>🔼 Voltar ao Índice</a>
+
 ## Parte 3:
 
 Para finalizar o workshop, a Jéssica ensinou como fazer uma rede sem precisar definir sua arquitetura, usar uma que já aprendeu a identificar outras categorias de imagens e adaptá-la ao nosso projeto, ou seja fazer um **transfer learning**. A maior diferença entre este modelo e o anterior, é que desta vez usamos imagens coloridas, pois a arquitetura pronta foi treinada desta forma. Então, após fazer a importação das bibliotecas e arquivos, separar *Treino* e *Teste*, criamos o *train_generator* e *valid_generator* para imagens coloridas.
@@ -301,6 +302,8 @@ Fizemos a criação dos callbacks *ModelCheckpoint* e *EarlyStopping*, seguido p
 Antes deste workshop, eu nunca tinha trabalhado com Deep Learning, muito menos com Rede Neural e achei interessante o fato de poder atribuir “pesos” às variáveis, sem precisar balancear os dados, algo que fiz nos meus projetos anteriores. Mesmo não obtendo bons resultados na classificação de imagens, eu gostei de ter aprendido uma nova ferramenta, de ter este primeiro contato com este tipo de modelo de Machine Learning e até consigo imaginar alguns projetos pessoais em que posso replicar este conhecimento.
 
 Sei que preciso corrigir a questão do *labelEncoder*, mas adquiri um novo interesse e pretendo melhorar a forma que utilizo esta ferramenta. 
+
+<a href='#sobre'>🔼 Voltar ao Índice</a>
 
 ---
 
