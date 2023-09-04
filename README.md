@@ -18,6 +18,7 @@ A [PrograMaria](https://www.programaria.org/) é uma startup de impacto social q
 Desde 2020, ano que comecei a pesquisar mais sobre dados, a PrograMaria foi uma das comunidades femininas que encontrei e me encantei. Tive a oportunidade de participar de alguns eventos online e foi onde encontrei uma linda rede de apoio, pois foi onde conheci muita gente maravilhosa, tanto palestrantes quanto outras participantes que estavam em uma situação parecida com a minha, que já estavam decididas a migrar de carreira ou que estavam no início da carreira em tecnologia e queriam apoiar outras mulheres a seguirem o mesmo caminho. 
 
 <div id='sobre'></div>
+
 # Sobre a Sprint 📚
 
 A Sprint foi composta por 6 dias repletos de vídeos e artigos voltados à dados, em que cada dia era abordado um tópico diferente. Partindo de conteúdos sobre carreira e processos seletivos, no primeiro dia, e concluindo com uma live, com 3 especialistas da área. 
