@@ -19,10 +19,18 @@ Desde 2020, ano que comecei a pesquisar mais sobre dados, a PrograMaria foi uma 
 
 # Sobre a Sprint 📚
 
-A Sprint foi composta por 6 dias repletos de vídeos e artigos voltados à dados, em que cada dia era abordado um tópico diferente. Partindo de conteúdos sobre carreira e processos seletivos, no primeiro dia, e concluindo com uma live, com 3 especialistas da área. No 3º dia, o tema era Inteligência Artificial e, além dos artigos e palestras, tivemos um workshop sobre Deep Learning, com a head de dados na NeuralMed, [Jéssica dos Santos](https://www.linkedin.com/in/jessica-santos-oliveira).
+A Sprint foi composta por 6 dias repletos de vídeos e artigos voltados à dados, em que cada dia era abordado um tópico diferente. Partindo de conteúdos sobre carreira e processos seletivos, no primeiro dia, e concluindo com uma live, com 3 especialistas da área. 
 
+No 3º dia, o tema era Inteligência Artificial e, além dos artigos e palestras, tivemos um workshop sobre Deep Learning, com a head de dados na NeuralMed, [Jéssica dos Santos](https://www.linkedin.com/in/jessica-santos-oliveira).
+
+## Índice:
+- [Parte 1](Parte-1)
+- [Parte 2](Parte-2)
+- [Parte 3](Parte-3)
+  
 # Workshop 👩🏻‍💻
 
+<a name="Parte-1"></a>
 ## Parte 1
 
 Começamos o workshop com uma base de dados, disponibilizada no [Kaggle](https://www.kaggle.com), sobre [exames de câncer de mama](https://www.kaggle.com/datasets/yasserh/breast-cancer-dataset) com a finalidade de  classificar os tumores em malignos (cancerígenos) ou benignos (não cancerosos), utilizando Redes Neurais.
@@ -149,6 +157,7 @@ Acredito que não cheguei ao mesmo resultado, (1º) porque não trabalhamos com 
 
 ---
 
+<a name="Parte-2"></a>
 ## Parte 2
 
 Na segunda parte do workshop, fizemos um modelo para distinguir e classificar imagens de exames médicos, desta vez utilizando Redes Convolucionais. A base de dados também é do Kaggle, o [Medical MNIST](https://www.kaggle.com/datasets/andrewmvd/medical-mnist). 
@@ -245,6 +254,7 @@ E finalizamos a avaliação com uma matriz de confusão, nela observamos que nã
 
 Durante o workshop, a Jéssica reparou que o *LabelEncoder* mudaria as classes dos exames seguindo uma ordem alfabética, enquanto o *y_pred* seguiu a ordem que as classes foram aparecendo. Eu tentei corrigir este erro ao fazer um *LabelEncoder.fit*, mas acho que não obtive sucesso. Fica de lição para o próximo projeto.
 
+<a name="Parte-3"></a>
 ## Parte 3:
 
 Para finalizar o workshop, a Jéssica ensinou como fazer uma rede sem precisar definir sua arquitetura, usar uma que já aprendeu a identificar outras categorias de imagens e adaptá-la ao nosso projeto, ou seja fazer um **transfer learning**. A maior diferença entre este modelo e o anterior, é que desta vez usamos imagens coloridas, pois a arquitetura pronta foi treinada desta forma. Então, após fazer a importação das bibliotecas e arquivos, separar *Treino* e *Teste*, criamos o *train_generator* e *valid_generator* para imagens coloridas.
