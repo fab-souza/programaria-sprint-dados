@@ -284,7 +284,11 @@ Fizemos a criação do callbacks *ModelCheckpoint* e *EarlyStopping*, seguido pe
 
 # Conclusão 🏁
 
+Antes deste workshop, eu nunca tinha trabalhado com Deep Learning, muito menos com Rede Neural e achei interessante o fato de poder atribuir “pesos” às variáveis, sem precisar balancear os dados, algo que fiz nos meus projetos anteriores. Mesmo não obtendo bons resultados na classificação de imagens, eu gostei de ter aprendido uma nova ferramenta, de ter este primeiro contato com este tipo de modelo de Machine Learning e até consigo imaginar alguns projetos pessoais em que posso replicar este conhecimento.
 
+Sei que preciso corrigir a questão do *labelEncoder*, mas adquiri um novo interesse e pretendo melhorar a forma que utilizo esta ferramenta. 
+
+Muito obrigada por chegar até aqui e até a próxima 🤗
 
 
 ## Ferramentas utilizadas 🧰
