@@ -223,33 +223,67 @@ model.fit(train_generator, callbacks = [checkpoint, early_stop], steps_per_epoch
           validation_data = valid_generator, validation_steps = valid_generator.samples//BATCH_SIZE, epochs = 25)
 ```
 
-No meu caso, parou de ser treinado na época 12 com uma acurácia na validação de 0,9985 e uma perda na validação de 0,0061. Ambos foram um pouco melhor do que o modelo apresentado pela Jéssica, que obteve *val_loss* = 0,0052 e *val_accuracy* = 0,9984.
+No meu caso, parou de ser treinado na época 12 com uma acurácia na validação de 0,9991 e uma perda na validação de 0,0028. Ambos foram um pouco melhor do que o modelo apresentado pela Jéssica, que obteve *val_loss* = 0,0052 e *val_accuracy* = 0,9984.
 
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/92d08ca3-b4c1-4731-a41f-d7306fc4de05)
 
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/68764596-0ee9-4892-b35e-cc598cdb5ca9)
 
+Para aplicar o modelo treinado no conjunto de teste, não foi criado mais um *ImageGenerator* para eles, usamos duas funções do **Keras** que fazem o carregamento e a leitura das imagens, o *load_img* e *img_to_array*, pois a quantidade de arquivos era bem menor do que o conjunto de treino. Usamos o *.predict* no conjunto de teste e as previsões foram armazenadas na variável *y_pred*. Mas diferente do primeiro caso, que a saída era binária, não é possível avaliar o resultado fazendo *y_pred > 0.5*. Foi preciso usar um *.argmax(axis = 1)* para retornar o índice com o maior valor ao longo do eixo especificado, ou seja, o índice com o valor máximo ao longo do eixo 1 foi salvo na nova variável. Assim, obtivemos a classe prevista para cada imagem de teste.
 
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/8273aecf-7a9d-4eb6-be73-8dbc303f6073)
 
+As classes dos exames ainda estavam como *string* ('AbdomenCT', 'BreastMRI', 'CXR', 'ChestCT', 'Hand', 'HeadCT') e utilizamos um *LabelEncoder* para transformá-las em uma sequência de números, igual as previsões. 
 
+E finalizamos a avaliação com uma matriz de confusão, nela observamos que não obtive bons resultados. Com exceção dos exames do tipo 2 e 4, pois eles tiveram os maiores valores na linha diagonal da matriz, os demais exames foram mais classificados em outras categorias.
 
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/0d14b5ee-693f-40d7-8a3a-b0574985f985)
 
+Durante o workshop, a Jéssica reparou que o *LabelEncoder* mudaria as classes dos exames seguindo uma ordem alfabética, enquanto o *y_pred* seguiu a ordem que as classes foram aparecendo. Eu tentei corrigir este erro ao fazer um *LabelEncoder.fit*, mas acho que não obtive sucesso. Fica de lição para o próximo projeto.
 
+## Parte 3:
 
+Para finalizar o workshop, a Jéssica ensinou como fazer uma rede sem precisar definir sua arquitetura, usar uma que já aprendeu a identificar outras categorias de imagens e adaptá-la ao nosso projeto, ou seja fazer um **transfer learning**. A maior diferença entre este modelo e o anterior, é que desta vez usamos imagens coloridas, pois a arquitetura pronta foi treinada desta forma. Então, após fazer a importação das bibliotecas e arquivos, separar *Treino* e *Teste*, criamos o *train_generator* e *valid_generator* para imagens coloridas.
 
+```
+train_generator = data_generator.flow_from_dataframe(dataframe = df_train, x_col = 'path', y_col = 'class', 
+                                                     class_mode = 'categorical', batch_size = BATCH_SIZE, 
+                                                     target_size = (64,64), subset = 'training', color_mode = 'rgb')
+valid_generator = data_generator.flow_from_dataframe(dataframe = df_train, x_col = 'path', y_col = 'class', 
+                                                     class_mode = 'categorical', batch_size = BATCH_SIZE, 
+                                                     target_size = (64,64), subset = 'validation', color_mode = 'rgb')
+```
 
+Na criação do *Transfer Learning*, usamos a rede *MobileNetV2*, por ela ser menor e conseguir treinar o modelo mais rápido. Também definimos usar todos os pesos das milhões de imagens que passaram por ela, no *include_top* definimos que não queremos as 1000 classes de saída, e sim, as 6 categorias de exames, e no *input_shape*, o tamanho das imagens. Neste modelo, não usamos o *MaxPooling2D* e *Dropout*, mas fizemos o congelamento de algumas camadas no *for*. Transformamos a saída da camada anterior em uma camada densa ao fazer *x = base_model.output*, seguido por *x = layers.GlobalAveragePooling2D()(x)* que, diferente do *Flatten*, traz a média geral de matriz. Concluindo com o uso da camada densa na construção do modelo, *model = Model(base_model.input, predictions)*.
 
+```
+def build_model2(shape):
 
+    base_model = MobileNetV2(weights = "imagenet", include_top = False, input_shape = shape)
+    # congelando camadas que não iremos treinar.
+    # para congelar alguns layers específicos basta passar o indice: for layer in mobile.layers[:5]:
+    for layer in base_model.layers[:3]:
+        layer.Trainable = False
 
+    x = base_model.output
+    x = layers.GlobalAveragePooling2D()(x)
+    predictions = layers.Dense(6, activation = 'softmax')(x)
 
+    model = Model(base_model.input, predictions)
 
+    return model
+```
 
+Construímos o modelo e ao fazer o resumo, vemos que ele possui mais do que 2 milhões de parâmetros. 
 
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/821dcfc9-3be7-4e3d-8d18-080184894318)
 
+Fizemos a criação do callbacks *ModelCheckpoint* e *EarlyStopping*, seguido pela compilação do modelo, que chegou a um bom resultado um pouco mais rápido, em 10 épocas. Aplicamos o modelo no conjunto de teste e obtive um resultado pior, porque os exames foram classificados apenas como tipo 4 e 5.
 
-
-
-
+![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/f260f192-03fd-457b-ab51-0cc4df5d286a)
 
 # Conclusão 🏁
+
 
 
 
