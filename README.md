@@ -92,11 +92,13 @@ Definimos no ‘*fit*’: o conjunto de treino, tanto X quanto y, os conjuntos d
 No workshop, a Jéssica fez o ‘*fit*’ com 10 épocas. Os resultados obtidos pelo modelo da Jéssica foram:
 - acurácia = 0.9808
 - loss = 0.0971
+  
 Excelente.
 
 O meu modelo ficou com:
 - acurácia = 0.9783
 - loss = 0.0981
+  
 Valores próximos. 😀 👍
 
 Finalizando com a avaliação do modelo, usamos o ‘*.predict()*’ para fazer previsões com os dados do conjunto ‘X_test’ e a forma escolhida para verificar os resultados foi a matriz de confusão. E como ela funciona?
@@ -155,7 +157,7 @@ Após fazer o carregamento dos arquivos, o caminho de cada imagem tornou-se uma 
 
 ![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/01774eb7-fb06-4914-be5a-2a3670807b79)
 
-A separação de **Treino** e **Teste** foi parecida com a primeira parte do workshop, ou seja, importação de biblioteca, criação de *X_train*, *X_test*, *y_train* e *y_test* e determinando o tamanho do teste. No caso da leitura de imagens, não foi preciso criar um conjunto de *Validação*, porque vamos usar uma classe que já faz isso, o **ImageDataGenerator**.
+A separação de **Treino** e **Teste** foi parecida com a primeira parte do workshop, ou seja, importação de biblioteca, criação de *X_train*, *X_test*, *y_train* e *y_test* e determinando o tamanho do teste. No caso da leitura de imagens, não foi preciso criar um conjunto de *Validação*, porque usamos uma classe que já faz isso, o **ImageDataGenerator**.
 
 Para defini-la, primeiro, criamos uma variável que recebeu alguns parâmetros de processamento de imagens: *rescale* e *validation_split*. Uma para multiplicar os dados por um valor fornecido antes de qualquer outra transformação, como uma forma de normalização, e para reservar uma fração dos dados de treinamento para validação, respectivamente.
 
@@ -202,7 +204,7 @@ Finalizando com a camada de saída com 6 neurônios, referentes às categorias d
 - ChestCT = 0,25     
 - BreastMRI = 0,27
 
-Criamos o modelo, fizemos um *summary* para visualizar sua arquitetura e vemos que o modelo tem mais do que 850 mil parâmetros.
+Para criar o modelo, fizemos um *summary* para visualizar sua arquitetura e vemos que o modelo tem mais do que 850 mil parâmetros.
 
 ![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/bf06d4b3-9004-45c0-96fd-8584e15f4466)
 
@@ -225,7 +227,7 @@ model.fit(train_generator, callbacks = [checkpoint, early_stop], steps_per_epoch
           validation_data = valid_generator, validation_steps = valid_generator.samples//BATCH_SIZE, epochs = 25)
 ```
 
-No meu caso, parou de ser treinado na época 12 com uma acurácia na validação de 0,9991 e uma perda na validação de 0,0028. Ambos foram um pouco melhor do que o modelo apresentado pela Jéssica, que obteve *val_loss* = 0,0052 e *val_accuracy* = 0,9984.
+No meu caso, parou de ser treinado na época 12 com uma acurácia na validação de 0,9991 e uma perda na validação de 0,0028. Ambos foram um pouco melhor do que o modelo apresentado pela Jéssica, que obteve *val_loss* = 0,0041 e *val_accuracy* = 0,9986.
 
 ![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/92d08ca3-b4c1-4731-a41f-d7306fc4de05)
 
@@ -280,7 +282,7 @@ Construímos o modelo e ao fazer o resumo, vemos que ele possui mais do que 2 mi
 
 ![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/821dcfc9-3be7-4e3d-8d18-080184894318)
 
-Fizemos a criação do callbacks *ModelCheckpoint* e *EarlyStopping*, seguido pela compilação do modelo, que chegou a um bom resultado um pouco mais rápido, em 10 épocas. Aplicamos o modelo no conjunto de teste e obtive um resultado pior, porque os exames foram classificados apenas como tipo 4 e 5.
+Fizemos a criação dos callbacks *ModelCheckpoint* e *EarlyStopping*, seguido pela compilação do modelo, que chegou a um bom resultado um pouco mais rápido, em 10 épocas. Aplicamos o modelo no conjunto de teste e obtive um resultado pior, porque os exames foram classificados apenas como tipo 4 e 5.
 
 ![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/f260f192-03fd-457b-ab51-0cc4df5d286a)
 
