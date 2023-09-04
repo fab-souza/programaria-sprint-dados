@@ -298,13 +298,13 @@ Fizemos a criação dos callbacks *ModelCheckpoint* e *EarlyStopping*, seguido p
 
 ![image](https://github.com/fab-souza/programaria-sprint-dados/assets/67301805/f260f192-03fd-457b-ab51-0cc4df5d286a)
 
+<a href='#sobre'>🔼 Voltar ao Índice</a>
+
 # Conclusão 🏁
 
 Antes deste workshop, eu nunca tinha trabalhado com Deep Learning, muito menos com Rede Neural e achei interessante o fato de poder atribuir “pesos” às variáveis, sem precisar balancear os dados, algo que fiz nos meus projetos anteriores. Mesmo não obtendo bons resultados na classificação de imagens, eu gostei de ter aprendido uma nova ferramenta, de ter este primeiro contato com este tipo de modelo de Machine Learning e até consigo imaginar alguns projetos pessoais em que posso replicar este conhecimento.
 
 Sei que preciso corrigir a questão do *labelEncoder*, mas adquiri um novo interesse e pretendo melhorar a forma que utilizo esta ferramenta. 
-
-<a href='#sobre'>🔼 Voltar ao Índice</a>
 
 ---
 
